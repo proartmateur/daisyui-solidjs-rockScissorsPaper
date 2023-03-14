@@ -1,6 +1,6 @@
-const startButtonText = 'Jugar!';
+import { texts } from './texts';
 
-const StartScreen = () => {
+const StartScreen = ({ setIsPlaying }: { setIsPlaying: Function }) => {
   return (
     <>
       <div className="bg-e-white w-[320px] h-[480px] flex flex-col justify-center px-5">
@@ -13,8 +13,11 @@ const StartScreen = () => {
         <h1 className="font-extrabold font-sono text-6xl text-e-scissors ">
           <span className="text-e-green">o</span> Tijeras
         </h1>
-        <button className="btn mt-11 bg-e-black text-e-white">
-          {startButtonText}
+        <button
+          onclick={() => setIsPlaying(true)}
+          className="btn mt-11 bg-e-black text-e-white"
+        >
+          {texts.es.playButton}
         </button>
       </div>
     </>
